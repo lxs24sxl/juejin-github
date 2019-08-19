@@ -1,8 +1,8 @@
 import React from 'react';
-import './index.scss';
+import './index.less';
 
 function Page() {
-  return <div className="container">index</div>;
+  return <div className="index">index</div>;
 }
 
 export default Page;

@@ -2,7 +2,7 @@ import React from 'react';
 import Loadable from 'react-loadable';
 
 const menus = [
-  { title: '首页', page: 'index' },
+  { title: '首页', page: 'index', exact: true },
   { title: '沸点', page: 'pins'},
   { title: '话题', page: 'topic'},
   { title: '小册', page: 'books'},
