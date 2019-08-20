@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
 import classNames from 'classnames';
-import { useWindowScroll } from 'react-use';
+import { useWindowScroll } from 'hooks';
 import { StyledSection } from './style'
 
 function TagManage() {

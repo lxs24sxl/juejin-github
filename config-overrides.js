@@ -34,6 +34,8 @@ module.exports = override(
   // 添加alias
   addWebpackAlias({
     '@': resolve('src'),
+    'lib': resolve('src/lib'),
+    'hooks': resolve('src/lib/hooks'),
     'assets': resolve("src/assets"),
     'components': resolve("src/components"),
     // "@ant-design/icons/lib/dist$": resolve("./src/icons")
