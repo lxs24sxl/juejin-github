@@ -1,10 +1,10 @@
 import React from 'react';
 import Loadable from 'react-loadable';
-
+import { Skeleton } from 'antd';
 const menus = [
-  { title: '首页', page: 'index', exact: true },
+  { title: '首页', page: 'timeline', exact: true },
   { title: '沸点', page: 'pins'},
-  { title: '话题', page: 'topic'},
+  { title: '话题', page: 'topics'},
   { title: '小册', page: 'books'},
   { title: '活动', page: 'actions'},
 ];
@@ -12,7 +12,7 @@ const menus = [
 function wrapComponent(page) {
   return Loadable({
     loader: () => import(/* webpackExclude: /components/ */`../pages/${page}/index.js`),
-    loading: () => <div>loading</div>,
+    loading: () => <Skeleton active />,
   });
 }
 const routers = [];

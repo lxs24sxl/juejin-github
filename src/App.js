@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import logo from 'assets/images/logo.svg';
 import Layout from 'components/layout';
+
 import { GloablStyle } from './style';
 
 class App extends Component {

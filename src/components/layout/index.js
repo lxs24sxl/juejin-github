@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Header from 'components/header';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
-import routers from '@/routers/index'
-import { Result, Button } from 'antd';
+import routers from '@/routers/index';
+import Status404 from './404';
 
 class Layout extends Component {
-
   render() {
     return (
       <Router basename="/">
 
-        <Header></Header>
+        <Header>
+          
+        </Header>
 
         <div className="app-container">
           <Switch>
@@ -28,21 +29,11 @@ class Layout extends Component {
             <Redirect
               path="/"
               exact
-              to={{ pathname: '/index' }}
+              to={{ pathname: '/timeline' }}
             />
-            {/* todo: 单独写一个组件 */}
+
             <Route
-              render={() => (
-                <Result
-                  className="app-not-found"
-                  status="404"
-                  title="404"
-                  subTitle="Sorry, the page you visited does not exist."
-                  extra={
-                    <Button type="primary">Back Home</Button>
-                  }
-                />
-              )}
+              render={() => <Status404></Status404>}
             />
           </Switch>
         </div>

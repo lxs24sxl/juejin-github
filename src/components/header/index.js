@@ -1,32 +1,69 @@
 import React from 'react';
 import Menus from 'components/menus';
 import logo from 'assets/images/logo-full.svg';
-import { Div } from './style'
+import { StyleHeader } from './style'
 import { useWindowScroll } from 'react-use';
+import { Input, Dropdown, Button, Icon, Avatar, Menu } from 'antd'
 
 
 const Header = () => {
+  const ButtonGroup = Button.Group;
 
   const { y } = useWindowScroll();
 
   const headerClassName = {
-    className: `app-header fixed-header ${y <= 105? 'visible': ''}`
-  }
+    className: `app-header fixed-header ${y <= 235 ? 'visible' : ''}`
+  };
 
+  const AVATAR_SRC = "https://user-gold-cdn.xitu.io/2017/10/18/49b79c1c40e5ef11bedcc09ca067bae6?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1";
+
+  const menu = (
+    <Menu>
+      <Menu.Item key="1">
+        发布沸点
+      </Menu.Item>
+      <Menu.Item key="2">
+        分享链接
+      </Menu.Item>
+    </Menu>
+  );
   return (
-    <Div { ...headerClassName }>
+    <StyleHeader {...headerClassName}>
       <div className="container">
-        <img
-          src={logo}
-          className="app-header__logo"
-          alt="logo">
-        </img>
+        <div className="left">
+          <img
+            src={logo}
+            className="app-header__logo"
+            alt="logo">
+          </img>
 
-        <Menus className="app-header__menus"></Menus>
+          <Menus className="app-header__menus"></Menus>
+        </div>
+        <div className="right">
+          <Input.Search
+            style={{ width: 156 }}
+            placeholder="搜索掘金" />
+
+          <ButtonGroup className="app-header__btn-group">
+            <Button className="group-main" type="primary">写文章</Button>
+            <Dropdown 
+              overlay={menu} 
+              trigger={[ 'click' ]} 
+              placement="bottomCenter">
+              <Button className="group-icon" type="primary" icon="down"></Button>
+            </Dropdown>
+          </ButtonGroup>
+
+          <Icon className="app-header__icon" type="bell" theme="filled" />
+
+          <Avatar
+            className="app-header__avatar"
+            src={AVATAR_SRC} />
+
+        </div>
       </div>
-    </Div>
+    </StyleHeader>
   )
-  // }
 }
 
 export default Header;

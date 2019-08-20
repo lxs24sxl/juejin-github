@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import index from './pages/index/reducer';
+import timeline from './pages/timeline/reducer';
 
 export default combineReducers({
-  index,
+  timeline,
 });
