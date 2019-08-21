@@ -13,6 +13,8 @@ export const StyledSection = Styled.section`
   .container {
     display: flex;
     justify-content: space-between;
+    height: 100%;
+    align-items: center;
   }
 
   &.fixed-tag-manage {
