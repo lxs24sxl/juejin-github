@@ -40,7 +40,12 @@ class Layout extends PureComponent {
             <Redirect
               path="/"
               exact
-              to={{ pathname: '/timeline' }}
+              to={{ pathname: '/timeline/recommended' }}
+            />
+            <Redirect
+              path="/timeline"
+              exact
+              to={{ pathname: '/timeline/recommended' }}
             />
 
             <Route

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Menus from 'components/menus';
 import logo from 'assets/images/logo-full.svg';
 import classnames from 'classnames';
 import { StyleHeader } from './style'
 import { useWindowScroll } from 'hooks';
 import { Input, Dropdown, Button, Icon, Avatar, Menu } from 'antd';
+import { useLocation } from 'hooks';
 
 const Header = () => {
   const ButtonGroup = Button.Group;
@@ -19,6 +20,11 @@ const Header = () => {
 
   const AVATAR_SRC = "https://user-gold-cdn.xitu.io/2017/10/18/49b79c1c40e5ef11bedcc09ca067bae6?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1";
 
+  const curPath = useRef('');
+  const { location } = useLocation();
+  const { pathname } = location;
+  curPath.current = pathname;
+  
   const menu = (
     <Menu>
       <Menu.Item key="1">
@@ -40,7 +46,7 @@ const Header = () => {
             alt="logo">
           </img>
 
-          <Menus className="app-header__menus"></Menus>
+          <Menus className="app-header__menus" current={curPath.current}></Menus>
         </div>
         <div className="right">
           <Input.Search

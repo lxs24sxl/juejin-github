@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef } from 'react';
 import { List } from './style';
 import { useParams } from 'hooks';
 import NavItem from './nav-item';
@@ -7,8 +7,7 @@ function NavList(props) {
   const params = useRef('');
 
   params.current = useParams().type;
-
-
+  
   return (
     <List className="nav-list">
       {

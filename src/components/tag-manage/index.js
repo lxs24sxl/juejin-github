@@ -30,7 +30,8 @@ function TagManage() {
   useEffectOnce(() => {
     setList(categoryList); 
   });
-  const navList = useMemo(() =><NavList list={list}></NavList>, [list]);
+  
+  const navList = useMemo(() => <NavList list={list}></NavList>, [list]);
 
   return (
     <StyledSection className={sectionClassName}>

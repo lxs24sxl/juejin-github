@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { __RouterContext as RouterContext } from 'react-router';
-console.log('RouterContext',useContext,  RouterContext)
+
 const useRouter = () => {
   return useContext(RouterContext);
 };
