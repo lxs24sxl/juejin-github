@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import action from './action_creator';
 import store from './store';
 import { connect, Provider } from 'react-redux';
+import "../src/common/rem"; 
 
 const WrapApp = connect(
   state => state,

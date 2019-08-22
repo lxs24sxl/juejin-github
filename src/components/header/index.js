@@ -1,19 +1,21 @@
 import React from 'react';
 import Menus from 'components/menus';
 import logo from 'assets/images/logo-full.svg';
+import classnames from 'classnames';
 import { StyleHeader } from './style'
-import { useWindowScroll } from 'react-use';
-import { Input, Dropdown, Button, Icon, Avatar, Menu } from 'antd'
-
+import { useWindowScroll } from 'hooks';
+import { Input, Dropdown, Button, Icon, Avatar, Menu } from 'antd';
 
 const Header = () => {
   const ButtonGroup = Button.Group;
 
   const { y } = useWindowScroll();
 
-  const headerClassName = {
-    className: `app-header fixed-header ${y <= 235 ? 'visible' : ''}`
-  };
+  const headerClassName = classnames({
+    'app-header': true,
+    'fixed-header': true,
+    'visible': y <= 235
+  });
 
   const AVATAR_SRC = "https://user-gold-cdn.xitu.io/2017/10/18/49b79c1c40e5ef11bedcc09ca067bae6?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1";
 
@@ -27,8 +29,9 @@ const Header = () => {
       </Menu.Item>
     </Menu>
   );
+  
   return (
-    <StyleHeader {...headerClassName}>
+    <StyleHeader className={headerClassName}>
       <div className="container">
         <div className="left">
           <img

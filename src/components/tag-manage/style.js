@@ -17,6 +17,11 @@ export const StyledSection = Styled.section`
     align-items: center;
   }
 
+  .tag-manage__left, .tag-manage__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
   &.fixed-tag-manage {
     position: fixed;
     width: 100%;

@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Button } from 'antd';
 import classNames from 'classnames';
 import { useWindowScroll, useList, useEffectOnce } from 'hooks';
 import { StyledSection } from './style'
 import NavList from '../nav-list';
+
 import { res } from './data';
 let categoryList = res.d.categoryList;
-
+categoryList.unshift({
+  id: new Date().getTime(),
+  name: '推荐',
+  title: 'recommended',
+  weight: '00'
+})
 
 
 function TagManage() {
@@ -22,20 +28,15 @@ function TagManage() {
   const [list, { set: setList }] = useList([]); // 默认数组有8个
 
   useEffectOnce(() => {
-    categoryList.unshift({
-      id: new Date().getTime(),
-      name: '推荐',
-      title: '',
-      weight: '00'
-    })
     setList(categoryList); 
   });
+  const navList = useMemo(() =><NavList list={list}></NavList>, [list]);
 
   return (
     <StyledSection className={sectionClassName}>
       <div className="container">
         <div className="tag-manage__left">
-          <NavList list={list}></NavList>
+          {navList}
         </div>
         <div className="tag-manage__right">
           <Button type="link">

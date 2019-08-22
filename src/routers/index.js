@@ -2,7 +2,12 @@ import React from 'react';
 import Loadable from 'react-loadable';
 import { Skeleton } from 'antd';
 const menus = [
-  { title: '首页', page: 'timeline', exact: true },
+  { 
+    title: '首页', 
+    page: 'timeline', 
+    params: 'type',
+    default: 'recommended'
+  },
   { title: '沸点', page: 'pins'},
   { title: '话题', page: 'topics'},
   { title: '小册', page: 'books'},
