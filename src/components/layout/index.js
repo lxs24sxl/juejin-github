@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import Header from 'components/header';
+import Header from './header';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 import routers ,{ menus }from '@/routers/index';
 import Status404 from './404';

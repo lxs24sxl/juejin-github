@@ -1,7 +1,8 @@
 import React from 'react';
+import { DivPins } from './style';
 
 function Pins() {
-  return <div className="pins">pins</div>;
+  return <DivPins className="pins">pins</DivPins>;
 }
 
 export default Pins;

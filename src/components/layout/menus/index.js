@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { menus } from '@/routers/index';
+import { menus } from '@/routers';
 import { StyleUl } from './style';
 
 export default class Menus extends PureComponent {

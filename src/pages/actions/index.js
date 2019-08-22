@@ -1,7 +1,8 @@
 import React from 'react';
+import { DivAction } from './style';
 
 function Action() {
-  return <div className="action">action</div>;
+  return <DivAction className="action">action</DivAction>;
 }
 
 export default Action;

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import Menus from 'components/menus';
+import Menus from '../menus';
 import logo from 'assets/images/logo-full.svg';
 import classnames from 'classnames';
 import { StyleHeader } from './style'

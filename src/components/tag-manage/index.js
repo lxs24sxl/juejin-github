@@ -3,7 +3,7 @@ import { Button } from 'antd';
 import classNames from 'classnames';
 import { useWindowScroll, useList, useEffectOnce } from 'hooks';
 import { StyledSection } from './style'
-import NavList from '../nav-list';
+import NavList from './nav-list';
 
 import { res } from './data';
 let categoryList = res.d.categoryList;
@@ -30,7 +30,7 @@ function TagManage() {
   useEffectOnce(() => {
     setList(categoryList); 
   });
-  
+
   const navList = useMemo(() => <NavList list={list}></NavList>, [list]);
 
   return (
