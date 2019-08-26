@@ -5,12 +5,14 @@ import { StyleUl } from './style';
 
 export default class Menus extends PureComponent {
 
+
   isCurrent = (path) => {
     return this.props.current.split('/')[1] === path;
   }
 
   render() {
     const props = this.props;
+    
     return (
       <StyleUl className={props.className || 'app-header__menus'}>
         {
