@@ -1,9 +1,12 @@
 import React from 'react';
-import { StyleTimeLine } from './style.js';
-import TagManage from 'components/tag-manage';
 import { useParams } from 'hooks';
 import { Switch, Route } from 'react-router-dom';
-import TimelineView from './components/timeline-view'
+
+import TagManage from 'components/tag-manage';
+import TimelineView from './components/timeline-view';
+
+import { StyleTimeLine } from './style.js';
+
 function TimeLine(props) {
   const params = useParams();
 

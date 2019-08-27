@@ -10,7 +10,7 @@ import "../src/common/rem";
 const WrapApp = connect(
   state => state,
   action
-)(App)
+)(App);
 
 ReactDOM.render(
   <Provider store={store}>

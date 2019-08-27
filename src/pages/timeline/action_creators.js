@@ -12,6 +12,16 @@ function updateRecord(id, data) {
   };
 }
 
+function updateSort (sort) {
+  return dispatch => {
+    dispatch({
+      type: types.SORT_UPDATE,
+      sort
+    })
+  }
+}
+
 export default {
   updateRecord,
+  updateSort
 };
