@@ -3,8 +3,8 @@ import {
   useEffect
 } from 'react';
 
-const useEFfectOnce = (effect) => {
+const useEffectOnce = (effect) => {
   useEffect(effect, []);
 };
 
-export default useEFfectOnce;
+export default useEffectOnce;

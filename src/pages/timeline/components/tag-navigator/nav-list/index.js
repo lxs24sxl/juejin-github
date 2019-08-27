@@ -2,6 +2,7 @@ import React from 'react';
 import NavItem from '../nav-item';
 import { StyledNavList } from './style';
 import { useLocation } from 'hooks';
+import classNames from 'classnames';
 
 const isActive = (currentPathName, name) => {
   return currentPathName.split(/(\/|\?)/).includes(name)
@@ -12,7 +13,7 @@ function renderHeader(currentPathName, type) {
     title: '全部',
     tagId: '2333' + Math.random() * 100
   }
-  
+  console.log(currentPathName, type)
   return (
     <NavItem 
       className={currentPathName === `/timeline/${type}`? 'active' : ''}
@@ -27,10 +28,16 @@ function NavList(props) {
     pathname: currentPathName
   } } = useLocation();
 
+  const navListClass = classNames({
+    "nav-list": true,
+    "tag-list": true,
+    "active": props.list? props.list.length : false
+  });
+  
   return (
-    <StyledNavList className="nav-list tag-list">
+    <StyledNavList className={navListClass}>
 
-      {props.showAll ? renderHeader(currentPathName,props.type) : null}
+      {props.showAll ? renderHeader(currentPathName, props.type) : null}
 
       {
         props.list.map((data) =>
@@ -41,6 +48,7 @@ function NavList(props) {
             key={data.tagId}></NavItem>
         )
       }
+
       {props.children}
     </StyledNavList>
   )

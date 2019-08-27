@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import NavList from './nav-list';
 import { Icon } from 'antd';
 import { StyledNavItem } from './nav-item/style';
+
 
 function TagNavigator(props) {
   const [expendAll, setExpendAll] = useState(false);
@@ -9,12 +10,11 @@ function TagNavigator(props) {
   // watch props.list
   useEffect(() => {
     setExpendAll(false)
-  }, [props.list])
+  }, [props.type])
 
   const expendList = (e) => {
     setExpendAll(!expendAll)
   }
-
 
   const ExpendBtn = () => {
 
@@ -30,12 +30,18 @@ function TagNavigator(props) {
     }
     return null
   }
+
   
   return (
-    <NavList list={expendAll ? props.list : props.list.slice(0, 8)} showAll>
+    <NavList 
+      list={expendAll ? props.list : props.list.slice(0, 8)} 
+      type={props.type} 
+      showAll>
       {ExpendBtn()}
     </NavList>
   )
 }
 
-export default TagNavigator;
+export default memo((props) => {
+  return TagNavigator(props)
+});

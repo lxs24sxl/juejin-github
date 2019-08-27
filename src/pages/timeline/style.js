@@ -6,10 +6,6 @@ export const StyleTimeLine = styled.div`
   background-color: #f4f5f5;
   .container {
     margin: 0 auto;
-    // background-color: #fff;
-    &.timeline-container {
-      // margin-top: 15px;
-    }
   }
   
 `

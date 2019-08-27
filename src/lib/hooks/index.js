@@ -6,6 +6,8 @@ export { default as useEffectOnce } from './lifecycles/useEffectOnce';
 export { default as useMount } from './lifecycles/useMount';
 export { default as useUnMount } from './lifecycles/useUnMount';
 export { default as useLifecycles } from './lifecycles/useLifecycles';
+export { default as useUpdateEffect } from './lifecycles/useUpdateEffect';
+export { default as useLogger } from './lifecycles/useLogger';
 
 export { default as useRouter } from './router/useRouter';
 export { default as useParams } from './router/useParams';

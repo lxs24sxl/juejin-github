@@ -6,7 +6,8 @@ export const StyleHeader = styled.header`
   display: flex;
   border-bottom: 1px solid #f1f1f1;
   background-color: #fff;
-
+  z-index: 111;
+  
   &.visible {
     transform: translateZ(0) !important;
   }
