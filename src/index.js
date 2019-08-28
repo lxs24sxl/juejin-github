@@ -6,6 +6,7 @@ import action from './action_creator';
 import store from './store';
 import { connect, Provider } from 'react-redux';
 import "../src/common/rem"; 
+import 'moment/locale/zh-cn';
 
 const WrapApp = connect(
   state => state,
