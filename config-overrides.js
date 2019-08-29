@@ -3,6 +3,7 @@ const {
   fixBabelImports,
   addWebpackAlias,
   addBundleVisualizer,
+  // addWebpackExternals,
   addLessLoader
 } = require('customize-cra');
 const path = require('path');
@@ -19,6 +20,11 @@ module.exports = override(
     libraryDirectory: "lib",
     camel2DashComponentName: false
   }]),
+
+  // addWebpackExternals({
+  //   react: "React",
+  //   "react-dom": "ReactDom"
+  // }),
 
   // 添加 webpack-bundle-analyzer
   +process.env.BUNDLE_VISUALIZE === 1 && addBundleVisualizer(),

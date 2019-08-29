@@ -15,7 +15,6 @@ export const TimelineContent = styled.div`
     right: 0;
     top: 0;
     width: 2.4rem;
-    background-color: #fff;
   }
 
 `

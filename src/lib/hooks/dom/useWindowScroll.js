@@ -18,7 +18,7 @@ const useWindowScroll = () => {
   const frame = useRef(0);
 
   const [state, setState] = useState(getscolloffset());
-
+  
   useEffect(() => {
     const handler = () => {
       cancelAnimationFrame(frame.current);
@@ -26,16 +26,20 @@ const useWindowScroll = () => {
         setState(getscolloffset());
       });
     };
-
+    
     window.addEventListener('scroll', handler, {
       capture: false,
       passive: true,
     });
+    
+    // 初始化
+    handler()
 
     return () => {
       cancelAnimationFrame(frame.current);
       window.removeEventListener('scroll', handler);
     };
+    
 
   }, []);
 

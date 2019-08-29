@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledRecommendAuthorBlock = styled.div`
+  background-color: #fff;
+
   .user-block-header {
     width: 100%;
     padding: 0.12rem 0.15rem;
@@ -12,6 +14,19 @@ export const StyledRecommendAuthorBlock = styled.div`
 
     .item {
       width: 100%;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: hsla(0,0%,84.7%,.1);
+      }
+      
+      .more {
+        color: #007fff;
+        padding: 0.12rem 0;
+        text-align: center;
+        border-top: 1px solid hsla(0,0%,59.2%,.1);
+      }
 
       .link {
         padding: 0.12rem 0.15rem;

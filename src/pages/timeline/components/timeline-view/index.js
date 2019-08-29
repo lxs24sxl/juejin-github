@@ -5,6 +5,7 @@ import ListHeader from '../list-header';
 import EntryList from '../entry-list';
 import { TimelineContent } from './style';
 import RecommendAuthorBlock from '../recommend-author-block';
+import BookBlock from '../book-block';
 
 function tagNavigatorManage(type) {
   if (Object.keys(tagNavigatorRes).includes(type)) {
@@ -26,6 +27,7 @@ function TimelineView(props) {
         </div>
         <div className="timeline-content-right">
           <RecommendAuthorBlock></RecommendAuthorBlock>
+          <BookBlock></BookBlock>
         </div>
       </TimelineContent>
     </Fragment>
