@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { menus } from '@/routers';
 import { StyleUl } from './style';
+import propTypes from 'prop-types';
 
-export default class Menus extends PureComponent {
+class Menus extends PureComponent {
 
 
   isCurrent = (path) => {
@@ -32,3 +33,9 @@ export default class Menus extends PureComponent {
     )
   }
 };
+
+Menus.propTypes = {
+  className: propTypes.string,
+}
+
+export default Menus

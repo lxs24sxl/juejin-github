@@ -6,6 +6,7 @@ import EntryList from '../entry-list';
 import { TimelineContent } from './style';
 import RecommendAuthorBlock from '../recommend-author-block';
 import BookBlock from '../book-block';
+import propTypes from 'prop-types';
 
 function tagNavigatorManage(type) {
   if (Object.keys(tagNavigatorRes).includes(type)) {
@@ -32,6 +33,10 @@ function TimelineView(props) {
       </TimelineContent>
     </Fragment>
   )
+}
+
+TimelineView.propTypes = {
+  type: propTypes.string
 }
 
 export default TimelineView

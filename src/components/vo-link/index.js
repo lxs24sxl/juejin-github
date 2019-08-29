@@ -1,6 +1,7 @@
 import React from 'react';
 import { DIV } from './style';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 function VoLink(props) {
 
@@ -14,6 +15,15 @@ function VoLink(props) {
       {props.children}
     </DIV>
   )
+}
+
+VoLink.propTypes = {
+  children: propTypes.oneOfType([
+    propTypes.string,
+    propTypes.element,
+    propTypes.number
+  ]),
+  className: propTypes.string
 }
 
 export default VoLink;

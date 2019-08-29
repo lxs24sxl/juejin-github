@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { List } from './style';
 import { useParams } from 'hooks';
 import NavItem from './nav-item';
+import propTypes from 'prop-types';
 
 function NavList(props) {
   const params = useRef('');
@@ -17,6 +18,10 @@ function NavList(props) {
       }
     </List>
   )
+}
+NavList.propTypes = {
+  list: propTypes.array,
+  current: propTypes.string
 }
 
 // class NavList extends Component {

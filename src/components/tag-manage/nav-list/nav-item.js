@@ -3,6 +3,7 @@
 import React from 'react';
 import { Item } from './style';
 import { Link } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 const NavItem = (props) => {
   return (
@@ -12,6 +13,12 @@ const NavItem = (props) => {
       </Link>
     </Item>
   )
+}
+
+NavItem.propTypes = {
+  current: propTypes.string,
+  title: propTypes.string,
+  name: propTypes.string
 }
 
 export default NavItem;

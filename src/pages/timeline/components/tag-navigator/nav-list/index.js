@@ -3,6 +3,7 @@ import NavItem from '../nav-item';
 import { StyledNavList } from './style';
 import { useLocation } from 'hooks';
 import classNames from 'classnames';
+import propTypes from 'prop-types';
 
 const isActive = (currentPathName, name) => {
   return currentPathName.split(/(\/|\?)/).includes(name)
@@ -52,6 +53,13 @@ function NavList(props) {
       {props.children}
     </StyledNavList>
   )
+}
+
+
+NavList.propTypes = {
+  showAll: propTypes.bool,
+  type: propTypes.string,
+  list: propTypes.array
 }
 
 export default NavList;

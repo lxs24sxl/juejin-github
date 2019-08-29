@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyledNavItem } from './style';
 import { NavLink } from 'react-router-dom';
+import propTypes from 'prop-types';
 
 function NavItem (props) {
   return (
@@ -12,6 +13,11 @@ function NavItem (props) {
       </NavLink>
     </StyledNavItem>
   )
+}
+
+NavItem.propTypes = {
+  type: propTypes.string,
+  data: propTypes.object
 }
 
 export default NavItem;
