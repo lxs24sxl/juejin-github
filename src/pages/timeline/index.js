@@ -31,9 +31,6 @@ function TimeLine(props) {
           <Route path="/timeline/*" render={() => {
             return (
               <TimelineView type={params.type} ></TimelineView>
-              // <div>
-              //   timeline - {params.type}
-              // </div>
             )
           }}></Route>
         </Switch >
